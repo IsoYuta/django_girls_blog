@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-m!0khikd60u+p3(_@*0*8xei)ftm**t+93x-2q5kljq39zpf3x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 # Application definition
 
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog.apps.BlogConfig'
+    # 'blog.apps.BlogConfig'
     'app',
 ]
 
@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # DATABASES = {
 #     'default': {
@@ -90,17 +90,17 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #     }
 # }
 
-#PostgreSQL用：なんかしらんけど動かない→PosgreDBのコンフィグで日本語→英語にしたら改善
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangoGirlsDB',           #大文字小文字を区別するため注意
-        'USER': 'postgres',
-        'PASSWORD': '3802',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+# #PostgreSQL用：なんかしらんけど動かない→PosgreDBのコンフィグで日本語→英語にしたら改善
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'djangoGirlsDB',           #大文字小文字を区別するため注意
+#         'USER': 'postgres',
+#         'PASSWORD': '3802',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
