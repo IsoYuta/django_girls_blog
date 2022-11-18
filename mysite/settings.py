@@ -45,13 +45,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'blog.apps.BlogConfig'
+    'blog.apps.BlogConfig'
     'app',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', # 追加
+    # 'whitenoise.middleware.WhiteNoiseMiddleware', # 追加
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -80,12 +80,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-# ↓ 追加
-default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
+# # ↓ 追加
+# default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 
-DATABASES = {
-    "default": config("DATABASE_URL", default=default_dburl, cast=dburl),
-}
+# DATABASES = {
+#     "default": config("DATABASE_URL", default=default_dburl, cast=dburl),
+# }
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -97,12 +97,12 @@ DATABASES = {
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # #PostgreSQL用：なんかしらんけど動かない→PosgreDBのコンフィグで日本語→英語にしたら改善
 # DATABASES = {
@@ -163,6 +163,6 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-SUPERUSER_NAME = env("SUPERUSER_NAME")
-SUPERUSER_EMAIL = env("SUPERUSER_EMAIL")
-SUPERUSER_PASSWORD = env("SUPERUSER_PASSWORD")
+# SUPERUSER_NAME = env("SUPERUSER_NAME")
+# SUPERUSER_EMAIL = env("SUPERUSER_EMAIL")
+# SUPERUSER_PASSWORD = env("SUPERUSER_PASSWORD")
